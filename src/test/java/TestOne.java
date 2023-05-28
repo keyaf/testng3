@@ -1,10 +1,12 @@
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Test
 
+@Listeners(Testlistener.class)
 public class TestOne {
     @BeforeMethod
     public void beforeMethod(){
@@ -18,6 +20,7 @@ public class TestOne {
     @Test
     public void test2(){
         System.out.println("Test 2");
+        Assert.assertEquals(5,6);
     }
     @Test(priority = 1)
     public void test() {
